@@ -1,0 +1,28 @@
+.header {
+  background: #373c43;
+}
+
+.header h1 {
+  font-size: 5rem;
+}
+
+.header .btn:hover {
+  text-decoration: underline;
+}
+
+.input-area {
+  background: #292f36;
+}
+
+.result {
+  background: #444950;
+  min-height: 80vh;
+}
+
+.card {
+  min-width: fit-content;
+}
+
+.footer {
+  background: #5f6369;
+}

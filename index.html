@@ -1,0 +1,159 @@
+<!-- 
+RANDOM PICKER APP
+
+Kelompok 5:
+- Muhammad Haikal Asyam
+- Nurhuda Joantama Putra
+- Viliananda Tripita Claura
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Picker</title>
+
+    <!-- icon -->
+    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="style/bootstrap.min.css" />
+    <!-- Custom css -->
+    <link rel="stylesheet" href="style/style.css" />
+
+    <script src="js/sweetalert2.all.min.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container py-5">
+        <div class="text-white my-5">
+          <!-- title -->
+          <h1 class="my-4">Random<br />Picker</h1>
+
+          <!-- subtitle -->
+          <div class="fs-5">
+            <p><u> Random Picker, Random Sorting, Random Group </u></p>
+            <p>
+              Create randomize easier with this site <br />
+              without internet (In Client-Side)
+            </p>
+          </div>
+        </div>
+
+        <!-- button -->
+        <div class="my-5">
+          <a href="#random" class="btn btn-light rounded-pill px-4 py-2 fw-bold fs-3">Lets Try</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- input area Box -->
+    <div class="input-area" id="random">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-md-6">
+            <fieldset>
+              <label for="box" class="form-label text-white fw-bold">Input Item</label>
+              <textarea id="box" class="form-control fs-5" rows="15" placeholder="Input item here . . ."></textarea>
+            </fieldset>
+          </div>
+          <div class="col-md-3 align-self-end d-grid gap-2 mt-3">
+            <div>
+              <button type="button" class="btn btn-link text-decoration-none text-light m-0 p-2" data-bs-toggle="modal" data-bs-target="#infoModal">
+                <!-- 
+                 icon svg from font awesome
+                -->
+                <svg
+                  height="40"
+                  color="#fff"
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="fas"
+                  data-icon="info-circle"
+                  class="svg-inline--fa fa-info-circle fa-w-16"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+                  ></path>
+                </svg>
+                <span class="ps-1">How to use</span>
+              </button>
+            </div>
+
+            <!-- some button for input -->
+            <button class="btn btn-light m-2 fw-bold" id="btn-pick">Random Picker</button>
+            <button class="btn btn-light m-2 fw-bold" id="btn-sort">Random Sort</button>
+            <fieldset class="m-2">
+              <label class="form-label text-white">Max item per group </label>
+              <div class="col-md-6">
+                <input type="number" class="form-control" id="max-team-member" placeholder="number" min="1" />
+              </div>
+            </fieldset>
+            <button class="btn btn-light m-2 fw-bold" id="btn-team">Random Team</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- output area -->
+    <div class="result overflow-auto">
+      <div class="container py-5 d-flex flex-column" style="height: 100%">
+        <h1 class="text-white">Result</h1>
+        <div id="result"></div>
+      </div>
+    </div>
+
+    <!-- footer | copyright and teammate -->
+    <div class="footer py-3">
+      <div class="container py-5 d-flex align-items-center">
+        <div class="me-5">
+          <span class="text-white">&copy; 2021 Kelompok 5 PTKI 1C.</span>
+        </div>
+        <div>
+          <ul class="list-unstyled text-white m-0">
+            <li>Muhammad Haikal Asyam</li>
+            <li>Nurhuda Joantama Putra</li>
+            <li>Viliananda Tripita Claura</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for information how to use this app -->
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="infoLabel">How To Use</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Random picker is an online tool which helps to choose someone or the winners, making a group based on entries, and to mix list of things.</p>
+            <h5>How to use?</h5>
+            <ol>
+              <li>Input / copy your list from your word, wps, and TXT file.</li>
+              <li>Paste the list to the form box</li>
+              <li>Choose the random mixer that you like beside of form box.</li>
+            </ol>
+            <span class="fs-4">for separator every item you can enter / make a new line.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="js/random.js"></script>
+    <script src="js/download.js"></script>
+    <script src="js/copy.js"></script>
+  </body>
+</html>
